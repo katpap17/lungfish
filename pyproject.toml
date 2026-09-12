@@ -9,6 +9,9 @@ authors = [
 requires-python = ">=3.13"
 dependencies = []
 
+[project.scripts]
+lungfish = "lungfish.pipeline:main"
+
 [build-system]
 requires = ["uv_build>=0.12.13,<0.13.0"]
 build-backend = "uv_build"
@@ -16,8 +19,12 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "mypy>=2.3.1",
+    "pytest>=9.1.1",
 ]
 
 [tool.mypy]
 python_version = "3.13"
 strict = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

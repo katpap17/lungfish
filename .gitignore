@@ -30,3 +30,6 @@ htmlcov/
 *.fastq
 *.gz
 *.fai
+
+# Keep committed test fixtures
+!tests/data/*.fasta

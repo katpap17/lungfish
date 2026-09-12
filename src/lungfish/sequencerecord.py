@@ -2,8 +2,10 @@
 
 from dataclasses import dataclass
 
-@dataclass
+
+@dataclass(frozen=True, slots=True)
 class SequenceRecord:
-    id : str
+    id: str
+    description: str
     sequence: str
     quality: str | None = None
