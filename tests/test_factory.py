@@ -4,6 +4,7 @@ import pytest
 
 from lungfish.reader.factory import new_reader
 from lungfish.reader.fasta import FastaReader
+from lungfish.reader.fastq import FastqReader
 
 SAMPLE = Path(__file__).parent / "data" / "sample.fasta"
 
@@ -11,6 +12,11 @@ SAMPLE = Path(__file__).parent / "data" / "sample.fasta"
 @pytest.mark.parametrize("suffix", [".fasta", ".fa", ".fna"])
 def test_dispatches_fasta_extensions(suffix: str) -> None:
     assert isinstance(new_reader(f"reads{suffix}"), FastaReader)
+
+
+@pytest.mark.parametrize("suffix", [".fastq", ".fq"])
+def test_dispatches_fastq_extensions(suffix: str) -> None:
+    assert isinstance(new_reader(f"reads{suffix}"), FastqReader)
 
 
 def test_rejects_unknown_extension() -> None:
