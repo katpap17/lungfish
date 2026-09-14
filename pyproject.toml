@@ -7,7 +7,9 @@ authors = [
     { name = "Katerina", email = "kat.papapos@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "biopython>=1.88",
+]
 
 [project.scripts]
 lungfish = "lungfish.pipeline:main"
@@ -28,3 +30,7 @@ strict = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[[tool.mypy.overrides]]
+module = ["Bio.*"]
+ignore_missing_imports = true
