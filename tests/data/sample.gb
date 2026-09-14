@@ -1,0 +1,30 @@
+LOCUS       TEST001                   24 bp    DNA              UNK 01-JAN-1980
+DEFINITION  first test record.
+ACCESSION   TEST001
+VERSION     TEST001.1
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     source          1..24
+     gene            3..10
+                     /gene="g1"
+ORIGIN
+        1 acgtacgtac gtttttgggg cccc
+//
+LOCUS       TEST002                   16 bp    DNA              UNK 01-JAN-1980
+DEFINITION  second test record.
+ACCESSION   TEST002
+VERSION     TEST002.1
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     source          1..16
+     gene            3..10
+                     /gene="g2"
+ORIGIN
+        1 aaaaccccgg ggtttt
+//

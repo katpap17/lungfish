@@ -26,6 +26,8 @@ dev = [
 
 [tool.mypy]
 python_version = "3.13"
+# Biopython ships py.typed but leaves many functions unannotated.
+untyped_calls_exclude = ["Bio"]
 strict = true
 
 [tool.pytest.ini_options]

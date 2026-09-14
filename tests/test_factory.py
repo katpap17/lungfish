@@ -5,6 +5,7 @@ import pytest
 from lungfish.reader.factory import new_reader
 from lungfish.reader.fasta import FastaReader
 from lungfish.reader.fastq import FastqReader
+from lungfish.reader.genbank import GenBankReader
 
 SAMPLE = Path(__file__).parent / "data" / "sample.fasta"
 
@@ -30,3 +31,8 @@ def test_reads_sample_file_end_to_end() -> None:
     assert [r.id for r in records] == ["seq1", "seq2", "seq3"]
     assert records[0].sequence == "ACGTTTTT"
     assert records[1].description == ""
+
+
+@pytest.mark.parametrize("suffix", [".gb", ".gbk", ".gbff", ".genbank"])
+def test_dispatches_genbank_extensions(suffix: str) -> None:
+    assert isinstance(new_reader(f"reads{suffix}"), GenBankReader)
