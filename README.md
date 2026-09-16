@@ -1,4 +1,4 @@
-# lungfish
+# lungfish 🐟
 
 A small toolkit for reading, filtering and inspecting sequence files (FASTA, FASTQ, GenBank).
 
